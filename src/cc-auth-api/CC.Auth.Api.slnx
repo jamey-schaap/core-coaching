@@ -1,0 +1,7 @@
+﻿<Solution>
+  <Folder Name="/Solution/">
+    <File Path=".editorconfig" />
+    <File Path="..\..\.gitignore" />
+  </Folder>
+  <Project Path="CC.Auth.Api\CC.Auth.Api.csproj" Type="Classic C#" />
+</Solution>

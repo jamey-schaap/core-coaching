@@ -1,6 +1,0 @@
-@CC.Auth.Api_HostAddress = http://localhost:5130
-
-GET {{CC.Auth.Api_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
