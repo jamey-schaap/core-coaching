@@ -4,5 +4,5 @@ namespace CC.Auth.Api.Persistence.v1.Interfaces;
 
 public interface IUserRepository
 {
-    Task<User> GetUser(string email, string password);
+    Task<User?> TryGetUses(string email, string password);
 }

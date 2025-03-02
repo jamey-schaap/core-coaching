@@ -1,20 +1,6 @@
-namespace CC.Auth.Api.Extensions;
+using Microsoft.Extensions.DependencyInjection;
 
-public static class AppConfig
-{
-    public static class Sections
-    {
-        public const string Cosmos = nameof(Cosmos);
-        public const string CosmosAuth = $"{Cosmos}:Auth";
-    }
-
-    public static class Keys
-    {
-        public const string AppConfigConnectionString = $"AppConfig:ConnectionString";
-        public const string CosmosConnectionString = $"{Sections.Cosmos}:ConnectionString";
-        public const string CosmosDatabaseId = $"{Sections.CosmosAuth}:DatabaseId";
-    }
-}
+namespace CC.Common.Configuration.Extensions;
 
 public class OptionsBase(string sectionName)
 {
@@ -28,9 +14,9 @@ public static class ServiceCollectionExtensions
     {
         var sectionName = typeof(TOptions)
             .GetField("SectionName")!
-            .GetValue(null) as string;
+            .GetValue(obj: null) as string;
 
-        ArgumentNullException.ThrowIfNull(sectionName);
+        ArgumentException.ThrowIfNullOrWhiteSpace(sectionName);
 
         var optionsBuilder = services
             .AddOptions<TOptions>()

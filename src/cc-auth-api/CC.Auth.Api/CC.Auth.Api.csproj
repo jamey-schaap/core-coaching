@@ -14,11 +14,15 @@
     <PackageReference Include="Microsoft.Azure.Cosmos" Version="3.47.1" />
     <PackageReference Include="Microsoft.Extensions.Azure" Version="1.10.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.AzureAppConfiguration" Version="8.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Configuration\v1\" />
     <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\cc-common\CC.Common.Configuration\CC.Common.Configuration.csproj" />
   </ItemGroup>
 
 </Project>

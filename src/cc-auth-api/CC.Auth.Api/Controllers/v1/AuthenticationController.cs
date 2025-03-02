@@ -15,7 +15,7 @@ public class AuthenticationController(UserRepository userRepository) : Controlle
     [HttpPost]
     public async Task<IActionResult> Login([FromBody] LoginRequest request)
     {
-        await userRepository.GetUser(request.Email, request.Password);
+        await userRepository.TryGetUses(request.Email, request.Password);
         return Ok();
     }
 }

@@ -8,9 +8,9 @@ namespace CC.Auth.Api.Persistence.v1;
 
 public class UserRepository(CosmosClient cosmosClient) : IUserRepository
 {
-    public Task<User> GetUser(string email, string password)
+    public Task<User?> TryGetUses(string email, string password)
     {
-        // cosmosClient.GetContainer("core-coaching");
-        throw new NotImplementedException();
+        var container = cosmosClient.GetContainer("core-coaching", User.ContainerId);
+        // container.getitem
     }
 }
